@@ -4,14 +4,14 @@ pragma solidity ^0.8.28;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract FixedCapToken is ERC20, AccessControl {
+contract DTVTToken is ERC20, AccessControl {
     uint256 public constant MAX_SUPPLY = 850_000_000 * 10**18;
     bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
     bytes32 public constant REGISTRAR_ROLE = keccak256("REGISTRAR_ROLE");
 
     mapping(bytes32 => bool) private registrationKeys;
 
-    constructor(address admin) ERC20("FixedCapToken", "FCT") {
+    constructor(address admin) ERC20("dtvt", "DTVT") {
         require(admin != address(0), "Invalid admin address");
         _grantRole(ADMIN_ROLE, admin);
         _grantRole(DEFAULT_ADMIN_ROLE, admin);

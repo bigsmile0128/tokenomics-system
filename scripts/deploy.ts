@@ -7,7 +7,7 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   // Deploy FixedCapToken
-  const token = await ethers.deployContract("FixedCapToken", [adminAddress]);
+  const token = await ethers.deployContract("DTVTToken", [adminAddress]);
   await token.waitForDeployment();
   console.log("FixedCapToken Contract Deployed at:", token.target);
 
